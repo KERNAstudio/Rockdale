@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { imageExists } from "@/lib/images";
+import { basePath } from "@/lib/basePath";
 
 type ImageSlotProps = {
   src: string;
@@ -47,10 +48,12 @@ export default function ImageSlot({
     );
   }
 
+  const resolvedSrc = `${basePath}${publicSrc}`;
+
   if (fill) {
     return (
       <Image
-        src={publicSrc}
+        src={resolvedSrc}
         alt={alt}
         fill
         sizes={sizes}
@@ -62,7 +65,7 @@ export default function ImageSlot({
 
   return (
     <Image
-      src={publicSrc}
+      src={resolvedSrc}
       alt={alt}
       width={width}
       height={height}

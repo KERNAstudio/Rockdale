@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
   basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,
   images: { unoptimized: true },
+  // next/image with unoptimized:true renders a plain <img src>, which does
+  // NOT get basePath auto-prepended (that only happens for the optimizer
+  // loader URL) — expose it so our own image components can prefix it.
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
 };
 
 export default nextConfig;

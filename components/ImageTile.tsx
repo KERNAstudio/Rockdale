@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { basePath } from "@/lib/basePath";
 
 type ImageTileProps = {
   src: string;
@@ -43,7 +44,7 @@ export default function ImageTile({
 
   return (
     <Image
-      src={publicSrc}
+      src={`${basePath}${publicSrc}`}
       alt={alt}
       fill={fill}
       sizes={sizes}
