@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { basePath } from "@/lib/basePath";
 import "./globals.css";
+
+// This project is an independent redesign, not the official rockdaleschool.in
+// site — metadataBase must point to where THIS actually deploys.
+const siteUrl = `https://kernastudio.github.io${basePath}`;
 
 const display = Playfair_Display({
   variable: "--font-display",
@@ -17,13 +22,13 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.rockdaleschool.in"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Rockdale School | A School for Life | Visakhapatnam",
     template: "%s | Rockdale School",
   },
   description:
-    "Rockdale School in Marripalem, Visakhapatnam has offered CBSE education from Play School to Grade X since 1997 — academic excellence, values and holistic development for over 26 years.",
+    "Rockdale School in Marripalem, Visakhapatnam has offered CBSE education from Play School and Pre-Primary through Grade X since 1997 — academic excellence, values and holistic development.",
   keywords: [
     "Rockdale School",
     "Rockdale School Visakhapatnam",
@@ -34,8 +39,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Rockdale School | A School for Life",
     description:
-      "CBSE education from Play School to Grade X in Marripalem, Visakhapatnam — 26+ years of academic excellence, values and holistic development.",
-    url: "https://www.rockdaleschool.in",
+      "CBSE education from Play School and Pre-Primary through Grade X in Marripalem, Visakhapatnam, since 1997.",
+    url: siteUrl,
     siteName: "Rockdale School",
     locale: "en_IN",
     type: "website",

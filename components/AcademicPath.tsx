@@ -41,7 +41,7 @@ export default function AcademicPath() {
 
           <Reveal className="relative aspect-[4/3] w-full">
             <ImageSlot
-              src="campus/classroom-learning.png"
+              src="campus/classroom-learning.jpg"
               alt="Students in a classroom at Rockdale School"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

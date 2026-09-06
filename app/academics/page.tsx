@@ -46,19 +46,19 @@ export default function AcademicsPage() {
                 {
                   title: "Science & Computer Labs",
                   caption: "Learning by doing.",
-                  image: "campus/science-lab.png",
+                  image: "campus/science-lab.jpg",
                   aspect: "landscape",
                 },
                 {
                   title: "Library & Reading",
                   caption: "A quiet space to read and think.",
-                  image: "campus/library.png",
+                  image: "campus/library.jpg",
                   aspect: "portrait",
                 },
                 {
                   title: "Classroom Learning",
                   caption: "Curiosity begins in the classroom.",
-                  image: "campus/classroom-learning.png",
+                  image: "campus/classroom-learning.jpg",
                   aspect: "square",
                 },
               ])}

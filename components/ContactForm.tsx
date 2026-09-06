@@ -11,6 +11,9 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
+  const nameInvalid = Boolean(error) && !name.trim();
+  const messageInvalid = Boolean(error) && !message.trim();
+
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!name.trim() || !message.trim()) {
@@ -27,7 +30,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
       <div>
         <label htmlFor="contact-name" className="block text-sm font-medium text-navy mb-1.5">
-          Name
+          Name <span aria-hidden="true">*</span>
         </label>
         <input
           id="contact-name"
@@ -35,6 +38,9 @@ export default function ContactForm() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Your name"
+          aria-required="true"
+          aria-invalid={nameInvalid}
+          aria-describedby={error ? "contact-form-error" : undefined}
           className={inputClasses}
         />
       </div>
@@ -53,7 +59,7 @@ export default function ContactForm() {
       </div>
       <div>
         <label htmlFor="contact-message" className="block text-sm font-medium text-navy mb-1.5">
-          Message
+          Message <span aria-hidden="true">*</span>
         </label>
         <textarea
           id="contact-message"
@@ -61,12 +67,15 @@ export default function ContactForm() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="What would you like to ask?"
+          aria-required="true"
+          aria-invalid={messageInvalid}
+          aria-describedby={error ? "contact-form-error" : undefined}
           className={inputClasses}
         />
       </div>
 
       {error && (
-        <p role="alert" className="text-sm text-red-600">
+        <p id="contact-form-error" role="alert" className="text-sm text-red-600">
           {error}
         </p>
       )}

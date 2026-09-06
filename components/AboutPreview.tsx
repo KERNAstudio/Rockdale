@@ -11,7 +11,7 @@ export default function AboutPreview() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <Reveal className="relative aspect-[4/3] w-full order-2 lg:order-1">
             <ImageSlot
-              src="campus/teacher-and-students.png"
+              src="campus/teacher-and-students.jpg"
               alt="A teacher working closely with students at Rockdale School"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

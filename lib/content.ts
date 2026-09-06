@@ -149,11 +149,11 @@ export const lifeCategories: {
     title: "Learn",
     description: "Classrooms, teachers, science and reading.",
     images: [
-      { image: "campus/classroom-learning.png", caption: "Classroom learning", aspect: "landscape" },
-      { image: "campus/teacher-and-students.png", caption: "Teacher and students", aspect: "portrait" },
-      { image: "campus/science-lab.png", caption: "Science and computer lab", aspect: "square" },
-      { image: "campus/library.png", caption: "Library and reading", aspect: "landscape" },
-      { image: "campus/primary-section.png", caption: "Primary section", aspect: "landscape" },
+      { image: "campus/classroom-learning.jpg", caption: "Classroom learning", aspect: "landscape" },
+      { image: "campus/teacher-and-students.jpg", caption: "Teacher and students", aspect: "portrait" },
+      { image: "campus/science-lab.jpg", caption: "Science and computer lab", aspect: "square" },
+      { image: "campus/library.jpg", caption: "Library and reading", aspect: "landscape" },
+      { image: "campus/primary-section.jpg", caption: "Primary section", aspect: "landscape" },
     ],
   },
   {
@@ -161,9 +161,9 @@ export const lifeCategories: {
     title: "Create",
     description: "Art, music, dance and cultural activities.",
     images: [
-      { image: "campus/arts-and-crafts.png", caption: "Arts and crafts", aspect: "portrait" },
-      { image: "gallery/crafts-exhibition.png", caption: "Crafts exhibition", aspect: "landscape" },
-      { image: "gallery/annual-day.png", caption: "Annual Day performance", aspect: "portrait" },
+      { image: "campus/arts-and-crafts.jpg", caption: "Arts and crafts", aspect: "portrait" },
+      { image: "gallery/crafts-exhibition.jpg", caption: "Crafts exhibition", aspect: "landscape" },
+      { image: "gallery/annual-day.jpg", caption: "Annual Day performance", aspect: "portrait" },
     ],
   },
   {
@@ -171,8 +171,8 @@ export const lifeCategories: {
     title: "Play",
     description: "Sports and recreation.",
     images: [
-      { image: "campus/sports.png", caption: "Sports and recreation", aspect: "wide" },
-      { image: "gallery/sports-day.png", caption: "Sports Day", aspect: "landscape" },
+      { image: "campus/sports.jpg", caption: "Sports and recreation", aspect: "wide" },
+      { image: "gallery/sports-day.jpg", caption: "Sports Day", aspect: "landscape" },
     ],
   },
   {
@@ -180,9 +180,9 @@ export const lifeCategories: {
     title: "Belong",
     description: "Assembly, friendships and everyday school life.",
     images: [
-      { image: "campus/morning-assembly.png", caption: "Morning assembly", aspect: "square" },
-      { image: "gallery/clean-and-green.png", caption: "Clean & Green Initiative", aspect: "square" },
-      { image: "gallery/school-photos.png", caption: "Everyday school life", aspect: "wide" },
+      { image: "campus/morning-assembly.jpg", caption: "Morning assembly", aspect: "square" },
+      { image: "gallery/clean-and-green.jpg", caption: "Clean & Green Initiative", aspect: "square" },
+      { image: "gallery/school-photos.jpg", caption: "Everyday school life", aspect: "wide" },
     ],
   },
 ];
@@ -248,7 +248,7 @@ export const galleryItems: GalleryItem[] = [
     title: "School Photos",
     category: "Campus",
     caption: "The Rockdale campus, in everyday use.",
-    image: "gallery/school-photos.png",
+    image: "gallery/school-photos.jpg",
     aspect: "wide",
   },
   {
@@ -283,35 +283,35 @@ export const galleryItems: GalleryItem[] = [
     title: "Science Expo",
     category: "Academics",
     caption: "Learning by doing, on display.",
-    image: "gallery/science-expo.png",
+    image: "gallery/science-expo.jpg",
     aspect: "square",
   },
   {
     title: "Annual Day Celebrations",
     category: "Arts",
     caption: "Music and dance take centre stage.",
-    image: "gallery/annual-day.png",
+    image: "gallery/annual-day.jpg",
     aspect: "portrait",
   },
   {
     title: "Crafts Exhibition",
     category: "Arts",
     caption: "Creativity has many forms.",
-    image: "gallery/crafts-exhibition.png",
+    image: "gallery/crafts-exhibition.jpg",
     aspect: "landscape",
   },
   {
     title: "Clean & Green Initiative",
     category: "Community",
     caption: "Students taking care of their campus.",
-    image: "gallery/clean-and-green.png",
+    image: "gallery/clean-and-green.jpg",
     aspect: "square",
   },
   {
     title: "Sports Day",
     category: "Sports",
     caption: "Teamwork beyond the classroom.",
-    image: "gallery/sports-day.png",
+    image: "gallery/sports-day.jpg",
     aspect: "landscape",
   },
   {
@@ -383,4 +383,15 @@ export const admissionsContent = {
 export const contactContent = {
   eyebrow: "Contact",
   headline: "Come meet Rockdale.",
+};
+
+// The recurring bottom-of-page CTA banner (appears on every page) — kept
+// separate from admissionsContent since that's the /admissions page's own
+// hero copy, a different message for a different context.
+export const admissionsCta = {
+  eyebrow: "Admissions",
+  headline: "Considering Rockdale for your child?",
+  body: "Admissions are open. Speak with the school to learn more about the admission process and the next steps.",
+  primaryCta: { label: "Enquire Now", href: "/admissions" },
+  secondaryCta: { label: "Call the School" },
 };

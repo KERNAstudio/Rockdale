@@ -26,7 +26,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-(--container-page) px-5 md:px-8">
           <div className="relative aspect-[16/9] w-full">
             <ImageSlot
-              src="hero/rockdale-building.png"
+              src="hero/rockdale-building.jpg"
               alt="Rockdale School building, Marripalem, Visakhapatnam"
               fill
               sizes="100vw"

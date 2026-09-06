@@ -49,7 +49,7 @@ export default function Hero() {
         </div>
         <div className="relative mt-8 aspect-[4/3] w-full">
           <ImageSlot
-            src="hero/rockdale-building.png"
+            src="hero/rockdale-building.jpg"
             alt="Rockdale School building, Marripalem, Visakhapatnam"
             fill
             priority
@@ -68,7 +68,7 @@ export default function Hero() {
       <div className="hidden lg:block relative min-h-[460px]">
         <div className="ml-auto w-[58%] xl:w-[55%] aspect-[16/11] relative overflow-hidden">
           <ImageSlot
-            src="hero/rockdale-building.png"
+            src="hero/rockdale-building.jpg"
             alt="Rockdale School building, Marripalem, Visakhapatnam"
             fill
             priority

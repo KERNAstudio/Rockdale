@@ -65,24 +65,28 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <nav
-        aria-label="Primary"
-        className="lg:hidden border-t border-border overflow-x-auto no-scrollbar"
-      >
-        <ul className="flex items-center gap-6 px-5 md:px-8 py-3 text-sm font-medium text-navy/85 whitespace-nowrap w-max min-w-full">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="hover:text-rockdale-blue transition-colors"
-                aria-current={pathname === link.href ? "page" : undefined}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className="lg:hidden relative border-t border-border">
+        <nav aria-label="Primary" className="overflow-x-auto no-scrollbar">
+          <ul className="flex items-center gap-6 px-5 md:px-8 py-3 text-sm font-medium text-navy/85 whitespace-nowrap w-max min-w-full">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="hover:text-rockdale-blue transition-colors"
+                  aria-current={pathname === link.href ? "page" : undefined}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        {/* Hints that the nav scrolls further — purely decorative. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-off-white to-transparent"
+        />
+      </div>
     </header>
   );
 }
