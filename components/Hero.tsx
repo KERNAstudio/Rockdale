@@ -8,7 +8,7 @@ function HeroCopy() {
       <p className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-rockdale-blue">
         {heroContent.eyebrow}
       </p>
-      <h1 className="mt-5 font-serif-display text-navy text-5xl sm:text-6xl lg:text-[4.25rem] leading-[1.05]">
+      <h1 className="mt-5 font-serif-display text-navy text-5xl sm:text-6xl xl:text-[4.25rem] leading-[1.05]">
         {heroContent.headline.map((line) => (
           <span key={line} className="block">
             {line}
@@ -40,8 +40,10 @@ export default function Hero() {
   return (
     <section className="relative bg-off-white">
       {/* Mobile / tablet: simple stacked layout — a side-bleed split doesn't
-          leave enough room for the text column on narrow screens. */}
-      <div className="md:hidden">
+          leave enough room for the text column until the viewport is wide
+          enough (lg+) for both a full text column and a well-proportioned
+          photo without cropping it heavily. */}
+      <div className="lg:hidden">
         <div className="px-5 pt-10">
           <HeroCopy />
         </div>
@@ -58,11 +60,13 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Desktop: photo bleeds to the screen edge on the right, occupying
-          roughly the right half; only the seam where it meets the text
-          column is feathered — the image itself is never washed out. */}
-      <div className="hidden md:block relative min-h-[620px] lg:min-h-[720px] overflow-hidden">
-        <div className="absolute inset-y-0 right-0 w-[58%] lg:w-[55%]">
+      {/* Desktop: photo bleeds to the screen edge on the right. The image
+          box's height comes from its own aspect ratio (close to the real
+          photo's ~16:9) rather than a fixed hero height, so object-cover
+          only has to crop slightly rather than zooming in and losing most
+          of the building. Text is overlaid on top, vertically centered. */}
+      <div className="hidden lg:block relative min-h-[460px]">
+        <div className="ml-auto w-[58%] xl:w-[55%] aspect-[16/11] relative overflow-hidden">
           <ImageSlot
             src="hero/rockdale-building.png"
             alt="Rockdale School building, Marripalem, Visakhapatnam"
@@ -72,11 +76,13 @@ export default function Hero() {
             className="object-cover"
             placeholderLabel="Hero photo — Rockdale School building"
           />
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-32 lg:w-48 bg-gradient-to-r from-off-white to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-32 xl:w-48 bg-gradient-to-r from-off-white to-transparent" />
         </div>
 
-        <div className="relative z-10 h-full flex items-center mx-auto max-w-(--container-page) px-8">
-          <HeroCopy />
+        <div className="absolute inset-0 flex items-center">
+          <div className="mx-auto w-full max-w-(--container-page) px-8">
+            <HeroCopy />
+          </div>
         </div>
       </div>
     </section>
