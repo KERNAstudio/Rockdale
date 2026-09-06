@@ -82,7 +82,7 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="w-full inline-flex items-center justify-center rounded-full bg-navy text-white text-sm font-medium px-6 py-3 hover:bg-deep-blue transition-colors"
+        className="btn-lift w-full inline-flex items-center justify-center rounded-full bg-navy text-white text-sm font-medium px-6 py-3 hover:bg-deep-blue transition-colors"
       >
         Send via WhatsApp
       </button>

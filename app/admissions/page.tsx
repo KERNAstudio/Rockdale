@@ -36,7 +36,7 @@ export default function AdmissionsPage() {
           <div className="mt-14 grid md:grid-cols-3 gap-10">
             {admissionsContent.steps.map((step, i) => (
               <Reveal key={step.number} delay={i * 80}>
-                <span className="font-serif-display text-3xl text-gold">
+                <span className="font-serif-display text-3xl text-gold tabular-nums">
                   {step.number}
                 </span>
                 <h3 className="mt-4 font-serif-display text-xl text-navy">

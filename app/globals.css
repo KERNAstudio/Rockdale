@@ -87,3 +87,51 @@ body {
 .font-serif-display {
   font-family: var(--font-display);
 }
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Near-invisible film grain over the whole page — texture, not decoration. */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Shared interaction treatment for filled and outline buttons — layer
+   alongside each component's own Tailwind sizing classes. */
+.btn-lift {
+  box-shadow: 0 10px 24px -10px rgba(7, 27, 58, 0.45);
+  transition:
+    transform 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.18s ease;
+}
+
+.btn-lift:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px -10px rgba(7, 27, 58, 0.55);
+}
+
+.btn-lift:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 6px 14px -8px rgba(7, 27, 58, 0.4);
+}
+
+.btn-press {
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.btn-press:active {
+  transform: scale(0.97);
+}

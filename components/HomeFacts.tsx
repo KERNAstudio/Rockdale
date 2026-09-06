@@ -19,7 +19,7 @@ export default function HomeFacts() {
               <p className="text-xs font-semibold tracking-[0.18em] uppercase text-muted">
                 {fact.label}
               </p>
-              <p className="mt-2 font-serif-display text-2xl md:text-3xl text-navy">
+              <p className="mt-2 font-serif-display text-2xl md:text-3xl text-navy tabular-nums">
                 {fact.value}
               </p>
             </Reveal>

@@ -52,14 +52,14 @@ export default function Navbar() {
 
         <Link
           href="/admissions"
-          className="hidden lg:inline-flex items-center rounded-full bg-navy text-white text-sm font-medium px-5 py-2.5 hover:bg-deep-blue transition-colors shrink-0"
+          className="btn-lift hidden lg:inline-flex items-center rounded-full bg-navy text-white text-sm font-medium px-5 py-2.5 hover:bg-deep-blue transition-colors shrink-0"
         >
           Enquire
         </Link>
 
         <Link
           href="/admissions"
-          className="lg:hidden inline-flex items-center rounded-full bg-navy text-white text-xs font-medium px-4 py-2 shrink-0"
+          className="btn-lift lg:hidden inline-flex items-center rounded-full bg-navy text-white text-xs font-medium px-4 py-2 shrink-0"
         >
           Enquire
         </Link>

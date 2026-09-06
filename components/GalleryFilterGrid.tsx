@@ -32,7 +32,7 @@ export default function GalleryFilterGrid({
             type="button"
             onClick={() => setActive(filter)}
             aria-pressed={active === filter}
-            className={`rounded-full px-4 py-2 text-xs font-semibold tracking-[0.08em] uppercase transition-colors ${
+            className={`btn-press rounded-full px-4 py-2 text-xs font-semibold tracking-[0.08em] uppercase transition-colors ${
               active === filter
                 ? "bg-navy text-white"
                 : "bg-transparent text-navy border border-border hover:border-navy"

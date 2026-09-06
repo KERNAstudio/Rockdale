@@ -57,13 +57,13 @@ export default function ContactSection({
                 href={siteConfig.address.mapsHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-navy text-white text-sm font-medium px-6 py-3 hover:bg-deep-blue transition-colors"
+                className="btn-lift inline-flex items-center justify-center rounded-full bg-navy text-white text-sm font-medium px-6 py-3 hover:bg-deep-blue transition-colors"
               >
                 Open in Google Maps
               </a>
               <a
                 href={siteConfig.phoneHref}
-                className="inline-flex items-center justify-center rounded-full border border-navy/25 text-navy text-sm font-medium px-6 py-3 hover:border-navy transition-colors"
+                className="btn-press inline-flex items-center justify-center rounded-full border border-navy/25 text-navy text-sm font-medium px-6 py-3 hover:border-navy transition-colors"
               >
                 Call Us
               </a>

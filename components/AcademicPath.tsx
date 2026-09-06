@@ -20,7 +20,7 @@ export default function AcademicPath() {
               {academicJourney.map((step, i) => (
                 <Reveal key={step.stage} delay={i * 50}>
                   <li className="flex items-baseline gap-4 py-3 border-b border-navy/10 last:border-b-0">
-                    <span className="text-xs font-semibold text-gold tracking-[0.1em] shrink-0">
+                    <span className="text-xs font-semibold text-gold tracking-[0.1em] shrink-0 tabular-nums">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="font-serif-display text-lg text-navy">

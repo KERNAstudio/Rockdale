@@ -21,13 +21,13 @@ function HeroCopy() {
       <div className="mt-8 flex flex-wrap items-center gap-4">
         <Link
           href={heroContent.primaryCta.href}
-          className="inline-flex items-center rounded-full bg-navy text-white text-sm font-medium px-6 py-3.5 hover:bg-deep-blue transition-colors"
+          className="btn-lift inline-flex items-center rounded-full bg-navy text-white text-sm font-medium px-6 py-3.5 hover:bg-deep-blue transition-colors"
         >
           {heroContent.primaryCta.label}
         </Link>
         <Link
           href={heroContent.secondaryCta.href}
-          className="inline-flex items-center rounded-full border border-navy/20 text-navy text-sm font-medium px-6 py-3.5 hover:border-navy transition-colors"
+          className="btn-press inline-flex items-center rounded-full border border-navy/20 text-navy text-sm font-medium px-6 py-3.5 hover:border-navy transition-colors"
         >
           {heroContent.secondaryCta.label}
         </Link>

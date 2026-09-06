@@ -26,7 +26,7 @@ export default function AcademicJourney({
               className="flex-1 md:border-l first:border-l-0 border-border md:pl-6 py-6 md:py-0"
             >
               <div className="flex md:flex-col h-full gap-4 md:gap-0 items-baseline md:items-start">
-                <span className="text-xs font-semibold text-gold tracking-[0.14em]">
+                <span className="text-xs font-semibold text-gold tracking-[0.14em] tabular-nums">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="md:mt-4">
