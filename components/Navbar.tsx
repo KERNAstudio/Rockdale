@@ -25,11 +25,13 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-(--container-page) px-5 md:px-8 flex items-center justify-between h-16 md:h-20">
-        <Link
-          href="/"
-          className="font-serif-display text-lg md:text-xl tracking-wide text-navy shrink-0"
-        >
-          ROCKDALE SCHOOL
+        <Link href="/" className="shrink-0 leading-tight">
+          <span className="block font-serif-display text-lg md:text-xl tracking-wide text-navy">
+            ROCKDALE SCHOOL
+          </span>
+          <span className="hidden md:block text-[10px] font-semibold tracking-[0.2em] text-muted">
+            VISAKHAPATNAM
+          </span>
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">
@@ -52,7 +54,7 @@ export default function Navbar() {
           href="/admissions"
           className="hidden lg:inline-flex items-center rounded-full bg-navy text-white text-sm font-medium px-5 py-2.5 hover:bg-deep-blue transition-colors shrink-0"
         >
-          Enquire Now
+          Enquire
         </Link>
 
         <Link

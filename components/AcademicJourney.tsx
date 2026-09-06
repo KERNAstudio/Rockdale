@@ -2,15 +2,21 @@ import SectionHeader from "./SectionHeader";
 import Reveal from "./Reveal";
 import { academicJourney, siteConfig } from "@/lib/content";
 
-export default function AcademicJourney() {
+export default function AcademicJourney({
+  showHeader = true,
+}: {
+  showHeader?: boolean;
+}) {
   return (
     <section className="py-20 md:py-28 border-t border-border">
       <div className="mx-auto max-w-(--container-page) px-5 md:px-8">
-        <SectionHeader
-          eyebrow="Academics"
-          heading="A journey from Play School to Grade X."
-          description={`Rockdale follows the ${siteConfig.curriculum} curriculum from the very first year of school through board examinations.`}
-        />
+        {showHeader && (
+          <SectionHeader
+            eyebrow="Academics"
+            heading="A journey from Play School to Grade X."
+            description={`Rockdale follows the ${siteConfig.curriculum} curriculum from the very first year of school through board examinations.`}
+          />
+        )}
 
         <div className="mt-16 flex flex-col md:flex-row md:items-stretch">
           {academicJourney.map((step, i) => (

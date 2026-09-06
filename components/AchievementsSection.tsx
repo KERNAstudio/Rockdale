@@ -1,24 +1,29 @@
 import SectionHeader from "./SectionHeader";
 import Reveal from "./Reveal";
 import Link from "next/link";
-import { achievements } from "@/lib/content";
+import { achievements, achievementsContent } from "@/lib/content";
 
 export default function AchievementsSection({
   showLink = true,
-  limit,
+  featuredOnly = false,
+  showHeader = true,
 }: {
   showLink?: boolean;
-  limit?: number;
+  featuredOnly?: boolean;
+  showHeader?: boolean;
 }) {
-  const items = limit ? achievements.slice(0, limit) : achievements;
+  const items = featuredOnly ? achievements.filter((a) => a.featured) : achievements;
 
   return (
     <section className="py-20 md:py-28 border-t border-border">
       <div className="mx-auto max-w-(--container-page) px-5 md:px-8">
-        <SectionHeader
-          eyebrow="Achievements"
-          heading="Where our students go matters. What they become matters more."
-        />
+        {showHeader && (
+          <SectionHeader
+            eyebrow={achievementsContent.eyebrow}
+            heading={achievementsContent.headline}
+            description={featuredOnly ? achievementsContent.intro : undefined}
+          />
+        )}
 
         <div className="mt-14 divide-y divide-border border-t border-border">
           {items.map((person, i) => (
@@ -46,7 +51,7 @@ export default function AchievementsSection({
               href="/achievements"
               className="text-sm font-semibold text-navy border-b border-gold pb-0.5 hover:text-rockdale-blue transition-colors"
             >
-              More achievements &rarr;
+              Meet our alumni &rarr;
             </Link>
           </div>
         )}

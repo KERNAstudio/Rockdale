@@ -10,11 +10,11 @@ export default function AdmissionsCTA() {
             Admissions
           </p>
           <h2 className="mt-5 font-serif-display text-3xl md:text-5xl leading-[1.15] text-navy">
-            Admissions are open.
+            Considering Rockdale for your child?
           </h2>
           <p className="mt-5 max-w-xl mx-auto text-base md:text-lg text-muted leading-relaxed">
-            Give your child a place to learn, grow and discover their
-            potential.
+            Admissions are open. Speak with the school to learn more about
+            the admission process and the next steps.
           </p>
           <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -27,9 +27,10 @@ export default function AdmissionsCTA() {
               href={siteConfig.phoneHref}
               className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-navy/25 text-navy text-sm font-medium px-7 py-3.5 hover:border-navy transition-colors"
             >
-              Call {siteConfig.phone}
+              Call the School
             </a>
           </div>
+          <p className="mt-6 text-sm text-muted">{siteConfig.phone}</p>
         </div>
       </div>
     </section>

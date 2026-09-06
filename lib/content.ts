@@ -1,16 +1,17 @@
 // Factual content sourced from rockdaleschool.in (home, /about, /achievements,
-// /gallery, /contact) on 2026-09-02. Copy has been rewritten for clarity and
-// tone; facts, names, figures and quotes are preserved as published.
+// /gallery, /contact). Copy has been rewritten for clarity and editorial
+// tone; facts, names, figures and quotes are preserved as published. Do not
+// add statistics, results or facilities that are not verified here.
 
 export const siteConfig = {
   name: "Rockdale School",
   tagline: "A School for Life",
   foundedYear: 1997,
   foundedDateLabel: "10 December 1997",
-  yearsOfLearning: new Date().getFullYear() - 1997,
   phone: "+91 97049 20595",
   phoneHref: "tel:+919704920595",
   email: "rockdale@gmail.com",
+  hours: "8:30 AM – 4:00 PM, Monday to Friday",
   whatsappHref:
     "https://api.whatsapp.com/send?phone=919704920595&text=Hi%20I%20would%20like%20to%20know%20more%20about%20the%20school%20and%20the%20admission%20procedure.",
   address: {
@@ -26,6 +27,9 @@ export const siteConfig = {
     "Play School and Pre-Primary (Nursery to UKG) through Grade X",
 } as const;
 
+// Contact intentionally isn't a primary nav item — it stays reachable via
+// the footer, Admissions and the /contact page itself, keeping the top nav
+// spacious rather than competing with Admissions.
 export const navLinks = [
   { label: "About", href: "/about" },
   { label: "Academics", href: "/academics" },
@@ -33,66 +37,66 @@ export const navLinks = [
   { label: "Achievements", href: "/achievements" },
   { label: "Gallery", href: "/gallery" },
   { label: "Admissions", href: "/admissions" },
-  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const founders = [
-  {
-    name: "Pulletikurthy Narayana Murthy",
-    role: "Founder & Director",
-  },
-  {
-    name: "Pulletikurthy Uma Devi",
-    role: "Director & Correspondent",
-  },
+  { name: "Pulletikurthy Narayana Murthy", role: "Founder & Director" },
+  { name: "Pulletikurthy Uma Devi", role: "Director & Correspondent" },
 ] as const;
 
-export const legacy = {
-  eyebrow: `MORE THAN ${siteConfig.yearsOfLearning}+ YEARS OF LEARNING`,
-  statement:
-    "At Rockdale, we don't just teach.\nWe inspire, nurture and empower.",
-  body: `Founded on ${siteConfig.foundedDateLabel} by Pulletikurthy Narayana Murthy in Visakhapatnam, Rockdale School has grown into a home for holistic education. For more than ${siteConfig.yearsOfLearning} years, it has combined academic rigour with values and character, guiding students from Play School through Grade X under the CBSE curriculum.`,
+export const heroContent = {
+  eyebrow: "Rockdale School · Visakhapatnam",
+  headline: ["Learn.", "Grow.", "Belong."],
+  supporting:
+    "A CBSE school in Visakhapatnam, welcoming students from Play School and Pre-Primary through Grade X.",
+  primaryCta: { label: "Explore the School", href: "/about" },
+  secondaryCta: { label: "Admissions", href: "/admissions" },
 };
 
-export const visionMission = {
-  vision:
-    "To inspire and empower lifelong learners and leaders.",
+// Four Facts — replaces a floating "29+ years" style stat, which ages badly
+// and reads as marketing. A founding date is a fact; use it directly.
+export const homeFacts = [
+  { label: "Since", value: "1997" },
+  { label: "Curriculum", value: siteConfig.curriculum },
+  { label: "Classes", value: "Play School–Grade X" },
+  { label: "Location", value: "Visakhapatnam" },
+] as const;
+
+export const aboutContent = {
+  homeHeadline: "A school built over time.",
+  homeIntro:
+    "Founded in Visakhapatnam in 1997, Rockdale School provides education from Play School and Pre-Primary through Grade X under the CBSE curriculum. The school combines classroom learning with activities, sports, arts and opportunities for students to develop confidence beyond academics.",
+  pageEyebrow: "About Rockdale",
+  pageHeadline: "A school built over time.",
+  pageIntro:
+    "Founded in Visakhapatnam in 1997, Rockdale School has grown around a simple commitment to meaningful education, strong foundations and the development of the whole student.",
+  foundingHeading: "Since 10 December 1997.",
+  foundingBody: `Rockdale School was founded on ${siteConfig.foundedDateLabel} by Pulletikurthy Narayana Murthy in Visakhapatnam. Under the ${siteConfig.curriculum} curriculum, it provides education from Play School and Pre-Primary through Grade X.`,
+  vision: "To inspire and empower lifelong learners and leaders.",
   mission:
     "To nurture every child's potential through academic excellence, values, and innovation.",
-};
-
-export const lifePillars = [
-  {
-    number: "01",
-    title: "Holistic Education",
-    description:
-      "Learning that reaches beyond textbooks, into character, values and everyday life skills.",
-  },
-  {
-    number: "02",
-    title: "Academic Excellence",
-    description:
-      "A CBSE curriculum delivered by experienced, student-centred teachers from Play School to Grade X.",
-  },
-  {
-    number: "03",
-    title: "Beyond the Classroom",
-    description:
-      "Music, dance, art, drama, sports and public speaking, open to every student, every year.",
-  },
-  {
-    number: "04",
-    title: "A Caring Community",
-    description:
-      "Small enough to know every child, with secure campuses, CCTV surveillance and dedicated staff.",
-  },
-  {
-    number: "05",
-    title: "A Global Outlook",
-    description:
-      "Seminars, quizzes and Olympiads that prepare students to compete and belong far beyond Vizag.",
-  },
-] as const;
+  values: [
+    {
+      title: "Learning",
+      description: `A ${siteConfig.curriculum} curriculum from Play School through Grade X, in digital classrooms with science and computer labs.`,
+    },
+    {
+      title: "Creativity",
+      description:
+        "Art, music and dance are part of the regular school routine, not an occasional activity.",
+    },
+    {
+      title: "Participation",
+      description:
+        "Seminars, quiz competitions and public speaking practice for every student, not a select few.",
+    },
+    {
+      title: "Community",
+      description:
+        "CCTV surveillance and dedicated staff look after every child on campus.",
+    },
+  ],
+} as const;
 
 export const facilities = [
   "Experienced & dedicated teachers",
@@ -107,19 +111,90 @@ export const facilities = [
 export const academicJourney = [
   { stage: "Play School", detail: "The first step into structured learning." },
   { stage: "Pre-Primary", detail: "Nursery · LKG · UKG" },
-  { stage: "Primary", detail: "Building the foundations of literacy and numeracy." },
+  { stage: "Primary", detail: "Building strong foundations." },
   { stage: "Middle School", detail: "Broader subjects, deeper thinking." },
   { stage: "Grade X", detail: "CBSE board preparation and public examinations." },
 ] as const;
 
-export const whyRockdale = [
-  { stat: `${siteConfig.yearsOfLearning}+`, label: "Years of learning" },
-  { stat: "Play School–X", label: "Pre-Primary to Grade X" },
-  { stat: "CBSE", label: "Curriculum followed" },
-  { stat: "Student-centred", label: "Teaching approach" },
-  { stat: "Academics + Life Skills", label: "A balanced education" },
-  { stat: "Affordable", label: "Quality education for every family" },
-] as const;
+export const academicsContent = {
+  eyebrow: "Academics",
+  headline: "Learning that grows with the student.",
+  intro: `Rockdale provides education from Play School and Pre-Primary through Grade X under the ${siteConfig.curriculum} curriculum.`,
+  coCurricular: [
+    "Art, music and dance",
+    "Sports and indoor games",
+    "Seminars and quiz competitions for every student",
+    "Public speaking practice for every student",
+  ],
+  gradeX:
+    "As students approach Grade X, classroom teaching shifts toward CBSE board preparation and public examinations, building on the foundations set from Play School onward.",
+};
+
+export type LifeCategoryKey = "learn" | "create" | "play" | "belong";
+
+interface LifeCategoryImage {
+  image: string;
+  caption: string;
+  aspect: "landscape" | "portrait" | "square" | "wide";
+}
+
+export const lifeCategories: {
+  key: LifeCategoryKey;
+  title: string;
+  description: string;
+  images: LifeCategoryImage[];
+}[] = [
+  {
+    key: "learn",
+    title: "Learn",
+    description: "Classrooms, teachers, science and reading.",
+    images: [
+      { image: "campus/classroom-learning.png", caption: "Classroom learning", aspect: "landscape" },
+      { image: "campus/teacher-and-students.png", caption: "Teacher and students", aspect: "portrait" },
+      { image: "campus/science-lab.png", caption: "Science and computer lab", aspect: "square" },
+      { image: "campus/library.png", caption: "Library and reading", aspect: "landscape" },
+      { image: "campus/primary-section.png", caption: "Primary section", aspect: "landscape" },
+    ],
+  },
+  {
+    key: "create",
+    title: "Create",
+    description: "Art, music, dance and cultural activities.",
+    images: [
+      { image: "campus/arts-and-crafts.png", caption: "Arts and crafts", aspect: "portrait" },
+      { image: "gallery/crafts-exhibition.png", caption: "Crafts exhibition", aspect: "landscape" },
+      { image: "gallery/annual-day.png", caption: "Annual Day performance", aspect: "portrait" },
+    ],
+  },
+  {
+    key: "play",
+    title: "Play",
+    description: "Sports and recreation.",
+    images: [
+      { image: "campus/sports.png", caption: "Sports and recreation", aspect: "wide" },
+      { image: "gallery/sports-day.png", caption: "Sports Day", aspect: "landscape" },
+    ],
+  },
+  {
+    key: "belong",
+    title: "Belong",
+    description: "Assembly, friendships and everyday school life.",
+    images: [
+      { image: "campus/morning-assembly.png", caption: "Morning assembly", aspect: "square" },
+      { image: "gallery/clean-and-green.png", caption: "Clean & Green Initiative", aspect: "square" },
+      { image: "gallery/school-photos.png", caption: "Everyday school life", aspect: "wide" },
+    ],
+  },
+];
+
+export const studentLifeContent = {
+  eyebrow: "Student Life",
+  headline: "More than the school day.",
+  intro:
+    "Music, dance, art, drama, sports and public speaking — open to every student, every year.",
+  experience:
+    "Every student takes part in seminars, quiz competitions and public speaking practice, alongside classroom learning — building confidence and participation habits early, not reserved for a select few.",
+};
 
 export const achievements = [
   {
@@ -127,20 +202,30 @@ export const achievements = [
     role: "Ph.D. Scholar, Department of Regulatory Affairs, NIPER-Hyderabad",
     description:
       "Studied at Rockdale from Nursery through Class X before going on to doctoral research at NIPER-Hyderabad.",
-  },
-  {
-    name: "P. Laxmi Prasad",
-    role: "Finance Professional, PepsiCo",
-    description:
-      "Builds expertise in financial operations, corporate accounting, planning and compliance, currently managing key financial processes and reporting at PepsiCo. He has also mentored students in accounting and finance.",
+    featured: true,
   },
   {
     name: "Ch. Surya Pavan",
     role: "Chartered Accountant (qualified 2019)",
     description:
       "Built his academic foundation at Rockdale School before qualifying as a Chartered Accountant, going on to work with PricewaterhouseCoopers (PwC) and Consero Global Solutions.",
+    featured: true,
+  },
+  {
+    name: "P. Laxmi Prasad",
+    role: "Finance Professional, PepsiCo",
+    description:
+      "Builds expertise in financial operations, corporate accounting, planning and compliance, currently managing key financial processes and reporting at PepsiCo. He has also mentored students in accounting and finance.",
+    featured: false,
   },
 ] as const;
+
+export const achievementsContent = {
+  eyebrow: "Achievements",
+  headline: "Where Rockdale leads.",
+  intro:
+    "The strongest measure of a school is not only what happens inside its classrooms, but where its students go next.",
+};
 
 export type GalleryCategory =
   | "Academics"
@@ -262,101 +347,40 @@ export const galleryFilters: ("All" | GalleryCategory)[] = [
   "Campus",
 ];
 
-export const campusExperiences = [
-  {
-    title: "Classroom Learning",
-    caption: "Curiosity begins in the classroom.",
-    image: "campus/classroom-learning.png",
-    aspect: "landscape" as const,
-  },
-  {
-    title: "Teacher & Students",
-    caption: "Student-centred teaching, every day.",
-    image: "campus/teacher-and-students.png",
-    aspect: "portrait" as const,
-  },
-  {
-    title: "Science & Computer Labs",
-    caption: "Learning by doing.",
-    image: "campus/science-lab.png",
-    aspect: "square" as const,
-  },
-  {
-    title: "Library & Reading",
-    caption: "A quiet space to read and think.",
-    image: "campus/library.png",
-    aspect: "landscape" as const,
-  },
-  {
-    title: "Sports & Recreation",
-    caption: "Teamwork beyond the classroom.",
-    image: "campus/sports.png",
-    aspect: "wide" as const,
-  },
-  {
-    title: "Morning Assembly",
-    caption: "Where every school day begins.",
-    image: "campus/morning-assembly.png",
-    aspect: "square" as const,
-  },
-  {
-    title: "Arts & Crafts",
-    caption: "Creativity has many forms.",
-    image: "campus/arts-and-crafts.png",
-    aspect: "portrait" as const,
-  },
-  {
-    title: "Primary Section",
-    caption: "Where the youngest learners begin their journey.",
-    image: "campus/primary-section.png",
-    aspect: "landscape" as const,
-  },
-];
+// Curated highlight reel for the homepage — only items with real photography,
+// so the teaser never shows a placeholder. The full set (placeholders
+// included) lives on /gallery.
+export const homeGalleryHighlights: GalleryItem[] = galleryItems.filter((item) =>
+  ["School Photos", "Science Expo", "Annual Day Celebrations", "Clean & Green Initiative", "Sports Day"].includes(
+    item.title
+  )
+);
 
-export const testimonials = [
-  {
-    quote:
-      "It was a great experience studying here in this school. Blessed to be a part of this school.",
-    author: "Parent",
-  },
-  {
-    quote: "Very good school.",
-    author: "Parent",
-  },
-  {
-    quote: "This school provides quality education in the city Vizag.",
-    author: "Father",
-  },
-] as const;
+export const admissionsContent = {
+  eyebrow: "Admissions",
+  headline: "Start the conversation.",
+  intro:
+    "For information about admissions, availability and the next steps, contact Rockdale School directly.",
+  steps: [
+    {
+      number: "01",
+      title: "Get in touch",
+      description: "Call, WhatsApp or email the school office.",
+    },
+    {
+      number: "02",
+      title: "Speak with the school",
+      description: "Ask about seats, fees and what your child will need.",
+    },
+    {
+      number: "03",
+      title: "Understand the next steps",
+      description: "The school's office team will guide you through what happens next.",
+    },
+  ],
+};
 
-export const faqs = [
-  {
-    question: "Where is Rockdale School located in Visakhapatnam?",
-    answer: `Rockdale School is located at ${siteConfig.address.full}.`,
-  },
-  {
-    question: "What curriculum does Rockdale School follow?",
-    answer:
-      "Rockdale School follows the CBSE curriculum, focusing on academic excellence alongside co-curricular activities.",
-  },
-  {
-    question: "What classes or grades does the school offer?",
-    answer:
-      "The school offers education from Play School and Pre-Primary through Class X, catering to a wide age group of students.",
-  },
-  {
-    question: "What are the school timings?",
-    answer:
-      "Typical school hours are 8:30 AM to 4:00 PM, Monday to Friday. Specific timings may vary by grade.",
-  },
-  {
-    question: "What kind of co-curricular activities are available?",
-    answer:
-      "Students take part in music, dance, art, drama, sports and public speaking and debate — activities open to every student, not just a select few.",
-  },
-  {
-    question: "How does the school ensure student safety?",
-    answer:
-      "Rockdale School is equipped with CCTV surveillance, secure access control, and trained staff to look after every student on campus.",
-  },
-] as const;
+export const contactContent = {
+  eyebrow: "Contact",
+  headline: "Come meet Rockdale.",
+};

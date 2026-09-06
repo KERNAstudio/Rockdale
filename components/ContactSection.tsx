@@ -1,17 +1,23 @@
 import SectionHeader from "./SectionHeader";
-import { siteConfig } from "@/lib/content";
+import ContactForm from "./ContactForm";
+import { siteConfig, contactContent } from "@/lib/content";
 
-export default function ContactSection() {
+export default function ContactSection({
+  showHeader = true,
+}: {
+  showHeader?: boolean;
+}) {
   return (
     <section id="contact" className="py-20 md:py-28 bg-light-blue scroll-mt-20">
       <div className="mx-auto max-w-(--container-page) px-5 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           <div>
-            <SectionHeader
-              eyebrow="Contact"
-              heading="Come and see Rockdale for yourself."
-              description="We're happy to answer questions, arrange a campus visit, or walk you through admissions."
-            />
+            {showHeader && (
+              <SectionHeader
+                eyebrow={contactContent.eyebrow}
+                heading={contactContent.headline}
+              />
+            )}
 
             <dl className="mt-10 space-y-6 text-sm md:text-base">
               <div>
@@ -40,6 +46,10 @@ export default function ContactSection() {
                   </a>
                 </dd>
               </div>
+              <div>
+                <dt className="font-semibold text-navy">Hours</dt>
+                <dd className="mt-1 text-muted">{siteConfig.hours}</dd>
+              </div>
             </dl>
 
             <div className="mt-9 flex flex-wrap gap-4">
@@ -49,7 +59,7 @@ export default function ContactSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-navy text-white text-sm font-medium px-6 py-3 hover:bg-deep-blue transition-colors"
               >
-                Get Directions
+                Open in Google Maps
               </a>
               <a
                 href={siteConfig.phoneHref}
@@ -57,25 +67,11 @@ export default function ContactSection() {
               >
                 Call Us
               </a>
-              <a
-                href={siteConfig.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-navy/25 text-navy text-sm font-medium px-6 py-3 hover:border-navy transition-colors"
-              >
-                Send Enquiry
-              </a>
             </div>
           </div>
 
-          <div className="relative w-full aspect-[4/3] lg:aspect-auto overflow-hidden rounded-2xl border border-border">
-            <iframe
-              title="Rockdale School location map"
-              className="absolute inset-0 h-full w-full"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Rockdale+School+Marripalem+Visakhapatnam&output=embed"
-            />
+          <div className="rounded-2xl border border-border bg-off-white p-6 md:p-8">
+            <ContactForm />
           </div>
         </div>
       </div>

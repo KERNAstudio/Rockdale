@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import AchievementsSection from "@/components/AchievementsSection";
 import AdmissionsCTA from "@/components/AdmissionsCTA";
+import { achievementsContent } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Achievements",
@@ -13,11 +14,11 @@ export default function AchievementsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Our Alumni"
-        title="Where our students go matters."
-        description="At Rockdale School, we believe excellence deserves recognition. Here is a look at some of the milestones our alumni have reached."
+        eyebrow={achievementsContent.eyebrow}
+        title={achievementsContent.headline}
+        description={achievementsContent.intro}
       />
-      <AchievementsSection showLink={false} />
+      <AchievementsSection showLink={false} showHeader={false} />
       <AdmissionsCTA />
     </>
   );

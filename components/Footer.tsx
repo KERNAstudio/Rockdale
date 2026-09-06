@@ -1,21 +1,7 @@
 import Link from "next/link";
-import { siteConfig } from "@/lib/content";
+import { navLinks, siteConfig } from "@/lib/content";
 
-const quickLinks = [
-  { label: "About", href: "/about" },
-  { label: "Academics", href: "/academics" },
-  { label: "Achievements", href: "/achievements" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Admissions", href: "/admissions" },
-  { label: "Contact", href: "/contact" },
-];
-
-const infoLinks = [
-  { label: "School Timings", href: "/contact#faq" },
-  { label: "Curriculum", href: "/academics" },
-  { label: "Facilities", href: "/about#facilities" },
-  { label: "FAQs", href: "/contact#faq" },
-];
+const footerLinks = [...navLinks, { label: "Contact", href: "/contact" }];
 
 export default function Footer() {
   return (
@@ -25,21 +11,20 @@ export default function Footer() {
           <div>
             <p className="font-serif-display text-2xl">ROCKDALE SCHOOL</p>
             <p className="mt-2 text-gold text-sm tracking-[0.14em] uppercase">
-              A School for Life
+              {siteConfig.tagline}
             </p>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
-              Quality education should be accessible. Since {siteConfig.foundedYear},
-              Rockdale has been committed to providing meaningful, affordable
-              learning to the children of Visakhapatnam.
+              Since {siteConfig.foundedYear}, Rockdale School has been
+              providing education in Visakhapatnam.
             </p>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold tracking-[0.14em] uppercase text-white/50">
-              Quick Links
+              Navigation
             </h3>
             <ul className="mt-5 space-y-3 text-sm">
-              {quickLinks.map((link) => (
+              {footerLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-white/80 hover:text-gold transition-colors">
                     {link.label}
@@ -51,19 +36,6 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold tracking-[0.14em] uppercase text-white/50">
-              Information
-            </h3>
-            <ul className="mt-5 space-y-3 text-sm">
-              {infoLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-white/80 hover:text-gold transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <h3 className="mt-8 text-sm font-semibold tracking-[0.14em] uppercase text-white/50">
               Contact
             </h3>
             <ul className="mt-5 space-y-3 text-sm text-white/80">
@@ -77,14 +49,27 @@ export default function Footer() {
                   {siteConfig.email}
                 </a>
               </li>
-              <li>{siteConfig.address.line2}, {siteConfig.address.line3}</li>
+              <li>
+                {siteConfig.address.line2}
+                <br />
+                {siteConfig.address.line3}
+              </li>
+              <li>
+                <a
+                  href={siteConfig.address.mapsHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gold transition-colors"
+                >
+                  Open in Google Maps
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
+        <div className="mt-14 pt-8 border-t border-white/10 text-xs text-white/50">
           <p>Copyright &copy; {new Date().getFullYear()} Rockdale School</p>
-          <p>Marripalem, Visakhapatnam, Andhra Pradesh</p>
         </div>
       </div>
     </footer>
