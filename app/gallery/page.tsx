@@ -3,7 +3,7 @@ import PageHeader from "@/components/PageHeader";
 import GalleryFilterGrid from "@/components/GalleryFilterGrid";
 import AdmissionsCTA from "@/components/AdmissionsCTA";
 import { galleryItems } from "@/lib/content";
-import { resolveImages } from "@/lib/images";
+import { resolveGalleryItems } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -17,11 +17,11 @@ export default function GalleryPage() {
       <PageHeader
         eyebrow="Gallery"
         title="A record of the Rockdale school year."
-        description="Farewells, celebrations, science expos and everyday classroom life — a look back at recent moments on campus."
+        description="Farewells, celebrations, science expos and everyday classroom life — a look back at recent moments on campus. Click any moment to see its photos."
       />
       <section className="pb-20 md:pb-28">
         <div className="mx-auto max-w-(--container-page) px-5 md:px-8">
-          <GalleryFilterGrid items={resolveImages(galleryItems)} />
+          <GalleryFilterGrid items={resolveGalleryItems(galleryItems)} />
         </div>
       </section>
       <AdmissionsCTA />

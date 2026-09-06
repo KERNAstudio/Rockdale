@@ -21,3 +21,19 @@ export function resolveImages<T extends { image: string }>(
     exists: imageExists(`images/${item.image}`),
   }));
 }
+
+export interface ResolvedGalleryImage {
+  src: string;
+  exists: boolean;
+}
+
+// For gallery events, which can hold more than one photo (the lightbox
+// shows every one that actually exists on disk).
+export function resolveGalleryItems<T extends { images: string[] }>(
+  items: readonly T[]
+): (Omit<T, "images"> & { images: ResolvedGalleryImage[] })[] {
+  return items.map(({ images, ...rest }) => ({
+    ...rest,
+    images: images.map((src) => ({ src, exists: imageExists(`images/${src}`) })),
+  }));
+}

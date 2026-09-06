@@ -239,7 +239,11 @@ export interface GalleryItem {
   title: string;
   category: GalleryCategory;
   caption: string;
-  image: string;
+  // One event can have several photos — clicking the tile opens all of
+  // them. Add more filenames to the array as more photos come in for an
+  // event; the lightbox and the "N photos" badge both pick it up
+  // automatically.
+  images: string[];
   aspect: "landscape" | "portrait" | "square" | "wide";
 }
 
@@ -248,91 +252,91 @@ export const galleryItems: GalleryItem[] = [
     title: "School Photos",
     category: "Campus",
     caption: "The Rockdale campus, in everyday use.",
-    image: "gallery/school-photos.jpg",
+    images: ["gallery/school-photos.jpg"],
     aspect: "wide",
   },
   {
     title: "Farewell — 2K26 Batch",
     category: "Events",
     caption: "Sending off another graduating batch.",
-    image: "gallery/farewell-2k26.jpg",
+    images: ["gallery/farewell-2k26.jpg"],
     aspect: "portrait",
   },
   {
     title: "Farewell — 2K25 Batch",
     category: "Events",
     caption: "A tradition of celebrating every senior class.",
-    image: "gallery/farewell-2k25.jpg",
+    images: ["gallery/farewell-2k25.jpg"],
     aspect: "landscape",
   },
   {
     title: "SSC Success Meet 2025",
     category: "Academics",
     caption: "Celebrating Class X board results.",
-    image: "gallery/ssc-success-meet-2025.jpg",
+    images: ["gallery/ssc-success-meet-2025.jpg"],
     aspect: "square",
   },
   {
     title: "Children's Day Celebrations",
     category: "Events",
     caption: "A day led by teachers, for the students.",
-    image: "gallery/childrens-day.jpg",
+    images: ["gallery/childrens-day.jpg"],
     aspect: "landscape",
   },
   {
     title: "Science Expo",
     category: "Academics",
     caption: "Learning by doing, on display.",
-    image: "gallery/science-expo.jpg",
+    images: ["gallery/science-expo.jpg"],
     aspect: "square",
   },
   {
     title: "Annual Day Celebrations",
     category: "Arts",
     caption: "Music and dance take centre stage.",
-    image: "gallery/annual-day.jpg",
+    images: ["gallery/annual-day.jpg"],
     aspect: "portrait",
   },
   {
     title: "Crafts Exhibition",
     category: "Arts",
     caption: "Creativity has many forms.",
-    image: "gallery/crafts-exhibition.jpg",
+    images: ["gallery/crafts-exhibition.jpg"],
     aspect: "landscape",
   },
   {
     title: "Clean & Green Initiative",
     category: "Community",
     caption: "Students taking care of their campus.",
-    image: "gallery/clean-and-green.jpg",
+    images: ["gallery/clean-and-green.jpg"],
     aspect: "square",
   },
   {
     title: "Sports Day",
     category: "Sports",
     caption: "Teamwork beyond the classroom.",
-    image: "gallery/sports-day.jpg",
+    images: ["gallery/sports-day.jpg"],
     aspect: "landscape",
   },
   {
     title: "Teacher's Day Celebrations",
     category: "Community",
     caption: "Students thank the teachers who guide them.",
-    image: "gallery/teachers-day.jpg",
+    images: ["gallery/teachers-day.jpg"],
     aspect: "landscape",
   },
   {
     title: "Charities & Donations",
     category: "Community",
     caption: "Giving back beyond the school gates.",
-    image: "gallery/charities-and-donations.jpg",
+    images: ["gallery/charities-and-donations.jpg"],
     aspect: "wide",
   },
   {
     title: "Dignitary Visits",
     category: "Events",
     caption: "Guests who visit and encourage our students.",
-    image: "gallery/dignitary-visits.jpg",
+    images: ["gallery/dignitary-visits.jpg"],
     aspect: "square",
   },
 ];

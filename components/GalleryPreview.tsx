@@ -5,7 +5,11 @@ import { homeGalleryHighlights } from "@/lib/content";
 import { resolveImages } from "@/lib/images";
 
 export default function GalleryPreview() {
-  const featured = resolveImages(homeGalleryHighlights);
+  // Homepage teaser stays a simple, static grid (cover photo only) — the
+  // click-to-open-all-photos lightbox is a /gallery-only interaction.
+  const featured = resolveImages(
+    homeGalleryHighlights.map(({ images, ...rest }) => ({ ...rest, image: images[0] }))
+  );
 
   return (
     <section className="py-20 md:py-28 bg-cream">
