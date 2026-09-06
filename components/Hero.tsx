@@ -40,7 +40,7 @@ export default function Hero() {
 
           <div className="relative aspect-[4/5] sm:aspect-[16/11] lg:aspect-[4/5] lg:h-[640px] w-full">
             <ImageSlot
-              src="hero/rockdale-building.jpg"
+              src="hero/rockdale-building.png"
               alt="Rockdale School building, Marripalem, Visakhapatnam"
               fill
               priority
