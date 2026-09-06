@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import AcademicJourney from "@/components/AcademicJourney";
 import SectionHeader from "@/components/SectionHeader";
-import ImageGrid from "@/components/ImageGrid";
 import AdmissionsCTA from "@/components/AdmissionsCTA";
 import Reveal from "@/components/Reveal";
 import { siteConfig } from "@/lib/content";
-import { resolveImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Academics",
@@ -53,40 +51,6 @@ export default function AcademicsPage() {
                 ))}
               </ul>
             </Reveal>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-(--container-page) px-5 md:px-8">
-          <SectionHeader
-            eyebrow="Learning Environment"
-            heading="Digital classrooms, science and computer labs."
-            description="Fully equipped labs for hands-on experiments and coding practice, encouraging innovation alongside a strong academic foundation."
-          />
-          <div className="mt-14">
-            <ImageGrid
-              items={resolveImages([
-                {
-                  title: "Science & Computer Labs",
-                  caption: "Learning by doing.",
-                  image: "campus/science-lab.jpg",
-                  aspect: "landscape",
-                },
-                {
-                  title: "Library & Reading",
-                  caption: "A quiet space to read and think.",
-                  image: "campus/library.jpg",
-                  aspect: "portrait",
-                },
-                {
-                  title: "Primary Section",
-                  caption: "Where the youngest learners begin their journey.",
-                  image: "campus/primary-section.jpg",
-                  aspect: "square",
-                },
-              ])}
-            />
           </div>
         </div>
       </section>

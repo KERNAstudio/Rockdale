@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import SectionHeader from "@/components/SectionHeader";
 import Reveal from "@/components/Reveal";
-import ImageGrid from "@/components/ImageGrid";
 import AdmissionsCTA from "@/components/AdmissionsCTA";
 import {
   founders,
@@ -11,7 +10,6 @@ import {
   visionMission,
   siteConfig,
 } from "@/lib/content";
-import { resolveImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -116,27 +114,6 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24 border-t border-border">
-        <div className="mx-auto max-w-(--container-page) px-5 md:px-8">
-          <ImageGrid
-            items={resolveImages([
-              {
-                title: "Classroom Learning",
-                caption: "Curiosity begins in the classroom.",
-                image: "campus/classroom-learning.jpg",
-                aspect: "landscape",
-              },
-              {
-                title: "Morning Assembly",
-                caption: "Where every school day begins.",
-                image: "campus/morning-assembly.jpg",
-                aspect: "landscape",
-              },
-            ])}
-          />
         </div>
       </section>
 

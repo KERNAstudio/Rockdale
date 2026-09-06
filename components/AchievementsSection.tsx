@@ -5,9 +5,13 @@ import { achievements } from "@/lib/content";
 
 export default function AchievementsSection({
   showLink = true,
+  limit,
 }: {
   showLink?: boolean;
+  limit?: number;
 }) {
+  const items = limit ? achievements.slice(0, limit) : achievements;
+
   return (
     <section className="py-20 md:py-28 border-t border-border">
       <div className="mx-auto max-w-(--container-page) px-5 md:px-8">
@@ -17,7 +21,7 @@ export default function AchievementsSection({
         />
 
         <div className="mt-14 divide-y divide-border border-t border-border">
-          {achievements.map((person, i) => (
+          {items.map((person, i) => (
             <Reveal key={person.name} delay={i * 60}>
               <div className="grid md:grid-cols-[1fr_2fr] gap-3 md:gap-10 py-8">
                 <h3 className="font-serif-display text-xl md:text-2xl text-navy">

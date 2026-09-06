@@ -1,31 +1,27 @@
 import Hero from "@/components/Hero";
 import IntroSection from "@/components/IntroSection";
-import LifeAtRockdale from "@/components/LifeAtRockdale";
 import CampusSection from "@/components/CampusSection";
-import AcademicJourney from "@/components/AcademicJourney";
 import WhyRockdale from "@/components/WhyRockdale";
 import AchievementsSection from "@/components/AchievementsSection";
 import GalleryPreview from "@/components/GalleryPreview";
-import AdmissionsCTA from "@/components/AdmissionsCTA";
 import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import ContactSection from "@/components/ContactSection";
+import AdmissionsCTA from "@/components/AdmissionsCTA";
 
+// Kept deliberately tight: full Life at Rockdale lives on /student-life,
+// full academic journey on /academics, full achievements on /achievements,
+// FAQ + full contact details on /contact. This page teases each and links
+// out via nav/CTAs rather than repeating them in full.
 export default function Home() {
   return (
     <>
       <Hero />
       <IntroSection />
-      <LifeAtRockdale />
       <CampusSection />
-      <AcademicJourney />
       <WhyRockdale />
-      <AchievementsSection />
+      <AchievementsSection limit={1} />
       <GalleryPreview />
-      <AdmissionsCTA />
       <Testimonials />
-      <FAQ />
-      <ContactSection />
+      <AdmissionsCTA />
     </>
   );
 }
